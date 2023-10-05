@@ -1,6 +1,7 @@
 package program;
 
 import java.io.FileInputStream;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -20,17 +21,23 @@ public class CSVReader {
 
           String token = lineScanner.next();
 
-          System.out.println("Leu: [" + token + "]");
+          int matricula = 0;
 
-          String token = lineScanner.next();
+          String nome = lineScanner.next();
 
-          String token = lineScanner.next();
+          token = lineScanner.next();
 
-          String token = lineScanner.next();
+          float cr;
 
-          String token = lineScanner.next();
+          token = lineScanner.next();
 
-          Aluno a = new Aluno(0, 0, null, 0);
+          LocalDate nascimeno;
+
+          token = lineScanner.next();
+
+          float renda = 0;
+
+          Aluno a = new Aluno(nome, matricula, cr, nascimeno, renda);
           alunos.add(a);
         }
 
