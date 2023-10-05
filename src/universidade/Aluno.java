@@ -1,6 +1,7 @@
-package program;
+package universidade;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Aluno {
 
@@ -15,6 +16,7 @@ public class Aluno {
   private float rendaFamiliar;
 
   public Aluno(String nome, int matricula, float cr, LocalDate nascimento, float rendaFamiliar) {
+    this.nome = nome;
     this.matricula = matricula;
     this.cr = cr;
     this.nascimento = nascimento;
@@ -39,5 +41,12 @@ public class Aluno {
 
   public int getMatricula() {
     return matricula;
+  }
+
+  @Override
+  public String toString() {
+    return "Nome:" + this.nome + " Matrícula:" + this.matricula + " CR:" + this.cr + " nascimento:"
+        + this.nascimento.format(DateTimeFormatter.ofPattern("dd/MM/yy"))
+        + " Renda familiar:" + this.rendaFamiliar;
   }
 }
